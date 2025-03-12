@@ -1,4 +1,4 @@
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+import { PieChart, Pie, ResponsiveContainer } from 'recharts';
 import { DataPointTypeC } from '@/components/grafictsComponents/interface';
 
 interface DataPointPropsC {

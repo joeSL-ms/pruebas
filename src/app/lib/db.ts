@@ -1,6 +1,6 @@
 import mysql from "mysql2/promise";
 
-export async function query({ query, values = [] }: { query: string; values?: any[] }) {
+export async function query({ query, values = [] }: { query: string; values: (string | number | null)[] }) {
     const dbconnection = await mysql.createConnection({
     host: "localhost",
     database: "prueba",
@@ -11,10 +11,11 @@ export async function query({ query, values = [] }: { query: string; values?: an
 
   try {
     const [results] = await dbconnection.execute(query, values);
-    dbconnection.end();
     return results;
-  } catch (error : any) {
-    console.error("Error en la conexión:", error.message);
+  } catch (error ) {
+    console.error("Error en la conexión:", error);
     return { error };
+  } finally{
+    await dbconnection.end();
   }
 }

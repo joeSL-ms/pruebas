@@ -1,5 +1,5 @@
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
-import {DataPointTypeP,DataPointPropsP} from '@/components/grafictsComponents/interface';
+import {DataPointPropsP} from '@/components/grafictsComponents/interface';
 
 const ExampleSimpleRadarChart = ({data ,  height = 300} : DataPointPropsP) => {
       return (

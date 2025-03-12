@@ -1,6 +1,5 @@
-import React, { PureComponent } from 'react';
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
-import {DataPointTypeC,DataPointPropsC} from '@/components/grafictsComponents/interface';
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
+import {DataPointPropsC} from '@/components/grafictsComponents/interface';
 
 interface renderCustmoizedLabelProps {
     cx: number;
@@ -9,14 +8,13 @@ interface renderCustmoizedLabelProps {
     innerRadius: number;
     outerRadius: number;
     percent: number;
-    index: number;
 }
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
 const RADIAN = Math.PI / 180;
 
-const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index } : renderCustmoizedLabelProps) => {
+const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent } : renderCustmoizedLabelProps) => {
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);

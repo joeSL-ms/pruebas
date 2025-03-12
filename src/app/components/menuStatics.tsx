@@ -1,6 +1,5 @@
 "use client"
 
-import Image from "next/image";
 import * as DataComponents from "@/components/data/dataComponents";
 import Example from "@/components/grafictsComponents/grafica";
 import ExamplePieChartWithCustomizedLabel from "./grafictsComponents/cheeseGrafic";
@@ -24,10 +23,10 @@ const componentes2 = [
     { id: "componente3", label: "TwoLevelPieChart", component: () => <div className="p-4 bg-blue-200 rounded-lg"> <ExampleTwoLevelPieChart data01={DataComponents.data01} data02={DataComponents.data02} ></ExampleTwoLevelPieChart></div> },
 ];
 
-
+/*
 const GridElement = ({ children }: { children: React.ReactNode }) => {
     return <article className="mg-t-[10px] w-full">{children}</article>;
-}
+}*/
 
 const GridElementGrafic = ({ children, title}: { children: React.ReactNode,title:string }) => {
     return(

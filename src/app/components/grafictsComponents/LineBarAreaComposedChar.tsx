@@ -1,7 +1,7 @@
 import {
     ComposedChart, Line, Area, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Scatter, ResponsiveContainer,
 } from 'recharts';
-import {DataPointType,DataPointProps} from '@/components/grafictsComponents/interface';
+import {DataPointProps} from '@/components/grafictsComponents/interface';
 
 const ExampleLineBarAreaComposedChar = ({ data, height = 300 }: DataPointProps) => {
     return (

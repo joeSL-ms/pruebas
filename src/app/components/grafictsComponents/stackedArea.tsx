@@ -1,5 +1,5 @@
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-import {DataPointType,DataPointProps} from '@/components/grafictsComponents/interface';
+import {DataPointProps} from '@/components/grafictsComponents/interface';
 
 const ExampleStackedArea = ({ data, height = 300 }: DataPointProps) => {
   return (

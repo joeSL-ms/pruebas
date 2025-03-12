@@ -1,7 +1,7 @@
 import { 
     BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceLine, ResponsiveContainer 
 } from 'recharts';
-import {DataPointType,DataPointProps} from '@/components/grafictsComponents/interface';
+import {DataPointProps} from '@/components/grafictsComponents/interface';
 
 const ExamplePositiveAndNegativeBarChart = ({ data, height = 300 }: DataPointProps) => {  
       return (

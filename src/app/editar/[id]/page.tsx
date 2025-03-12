@@ -1,8 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import {use} from "react";
 
-export default function EditarUsuario({ params }: { params: { id: string } }) {
+export default function EditarUsuario({params}: {params: Promise<{ id: string }>}) {
+  const { id } = use(params);
   const [usuario, setUsuario] = useState({
     nombre: "",
     apellido: "",
@@ -13,9 +15,9 @@ export default function EditarUsuario({ params }: { params: { id: string } }) {
 
   useEffect(() => {
     // Verifica si 'id' está disponible en los parámetros de la URL
-    if (params.id) {
+    if (id) {
       // Llama a la API para obtener los datos del usuario basado en el id
-      fetch(`/api/empleados/${params.id}`)
+      fetch(`/api/empleados/${id}`)
         .then((res) => {
           if (!res.ok) {
             throw new Error("No se pudieron cargar los datos del usuario");
@@ -35,7 +37,7 @@ export default function EditarUsuario({ params }: { params: { id: string } }) {
           setLoading(false);
         });
     }
-  }, [params.id]); // Asegúrate de que se ejecute cada vez que cambie el 'id'
+  }, [id]); // Asegúrate de que se ejecute cada vez que cambie el 'id'
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,7 +48,7 @@ export default function EditarUsuario({ params }: { params: { id: string } }) {
     }
 
     // Enviar los datos al backend para actualizar el empleado
-    fetch(`/api/empleados/${params.id}`, {
+    fetch(`/api/empleados/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(usuario),
